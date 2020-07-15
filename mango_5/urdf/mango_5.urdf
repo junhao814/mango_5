@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="mango_5">
+
+  <link name="world"/>
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+
+  <link name="base_link">
+    <inertial>
+      <origin
+        xyz="0.55927 -0.48502 -0.20699"
+        rpy="0 0 0" />
+      <mass
+        value="28.563" />
+      <inertia
+        ixx="1.4273"
+        ixy="4.2352E-17"
+        ixz="3.348E-18"
+        iyy="9.1536"
+        iyz="8.4264E-17"
+        izz="10.577" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="arm1_base_link">
+    <inertial>
+      <origin
+        xyz="1.1102E-16 -0.061494 3.817E-09"
+        rpy="0 0 0" />
+      <mass
+        value="12.326" />
+      <inertia
+        ixx="0.08948"
+        ixy="-3.9642E-17"
+        ixz="1.4073E-20"
+        iyy="0.10835"
+        iyz="3.4843E-09"
+        izz="0.08948" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/arm1_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.98824 0.73725 0.51765 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/arm1_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="arm1_base_joint"
+    type="fixed">
+    <origin
+      xyz="-0.090731 -0.48502 -0.19199"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="arm1_base_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link name="arm1_link1">
+    <inertial>
+      <origin
+        xyz="-7.7923E-08 0.21472 1.5467E-08"
+        rpy="0 0 0" />
+      <mass
+        value="6.5885" />
+      <inertia
+        ixx="0.11783"
+        ixy="3.2015E-08"
+        ixz="-9.8953E-09"
+        iyy="0.013183"
+        iyz="-4.8087E-09"
+        izz="0.11739" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/arm1_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.54902 0.29412 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/arm1_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="arm1_joint1"
+    type="revolute">
+    <origin
+      xyz="0 -0.15 0"
+      rpy="3.14159265358979 0.011940527673363 0" />
+    <parent
+      link="arm1_base_link" />
+    <child
+      link="arm1_link1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-6"
+      upper="6"
+      effort="100000"
+      velocity="100" />
+  </joint>
+  <link name="arm1_link2">
+    <inertial>
+      <origin
+        xyz="4.903E-09 0.1606 -1.9773E-08"
+        rpy="0 0 0" />
+      <mass
+        value="7.0596" />
+      <inertia
+        ixx="0.11953"
+        ixy="-3.9571E-07"
+        ixz="5.6187E-08"
+        iyy="0.020135"
+        iyz="2.0369E-07"
+        izz="0.12624" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/arm1_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.54902 0.29412 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/arm1_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="arm1_joint2"
+    type="revolute">
+    <origin
+      xyz="0 0.36 0"
+      rpy="0.55343 1.5708 0" />
+    <parent
+      link="arm1_link1" />
+    <child
+      link="arm1_link2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100000"
+      velocity="100" />
+  </joint>
+  <link  name="arm1_link3">
+    <inertial>
+      <origin
+        xyz="-2.7561E-07 0.17228 -4.1564E-07"
+        rpy="0 0 0" />
+      <mass
+        value="5.7914" />
+      <inertia
+        ixx="0.1009"
+        ixy="-1.0674E-08"
+        ixz="5.6588E-08"
+        iyy="0.014012"
+        iyz="-7.9629E-09"
+        izz="0.1076" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/arm1_link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.98824 0.54902 0.29412 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/arm1_link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="arm1_joint3"
+    type="revolute">
+    <origin
+      xyz="0 0.350000000000009 0"
+      rpy="1.88217697673079 0 0" />
+    <parent
+      link="arm1_link2" />
+    <child
+      link="arm1_link3" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100000"
+      velocity="100" />
+  </joint>
+  <link  name="arm1_link4">
+    <inertial>
+      <origin
+        xyz="1.2078E-07 0.077553 4.284E-09"
+        rpy="0 0 0" />
+      <mass
+        value="2.3579" />
+      <inertia
+        ixx="0.010694"
+        ixy="-6.9438E-09"
+        ixz="-1.041E-08"
+        iyy="0.0059505"
+        iyz="-2.0735E-09"
+        izz="0.0079627" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/arm1_link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.54902 0.29412 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/arm1_link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="arm1_joint4"
+    type="revolute">
+    <origin
+      xyz="0 0.350000000000018 0"
+      rpy="1.5707963267949 0.286073040189066 1.5707963267949" />
+    <parent
+      link="arm1_link3" />
+    <child
+      link="arm1_link4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100000"
+      velocity="100" />
+  </joint>
+  <link  name="arm1_link5">
+    <inertial>
+      <origin
+        xyz="-1.904E-05 -3.8652E-06 -0.0145"
+        rpy="0 0 0" />
+      <mass
+        value="0.66998" />
+      <inertia
+        ixx="0.0009317"
+        ixy="-1.1406E-07"
+        ixz="1.7813E-07"
+        iyy="0.0020563"
+        iyz="3.6277E-08"
+        izz="0.0013837" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/arm1_link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.54902 0.29412 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/arm1_link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="arm1_joint5"
+    type="revolute">
+    <origin
+      xyz="0 0.21966 0"
+      rpy="-1.5708 0.012272 0" />
+    <parent
+      link="arm1_link4" />
+    <child
+      link="arm1_link5" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100000"
+      velocity="100" />
+  </joint>
+  <link  name="arm2_base_link">
+    <inertial>
+      <origin
+        xyz="5.5511E-17 0.061494 9.9177E-09"
+        rpy="0 0 0" />
+      <mass
+        value="12.326" />
+      <inertia
+        ixx="0.08948"
+        ixy="3.9545E-17"
+        ixz="-7.899E-20"
+        iyy="0.10835"
+        iyz="-1.6874E-09"
+        izz="0.08948" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/arm2_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.98824 0.73725 0.51765 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/arm2_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="arm2_base_joint"
+    type="fixed">
+    <origin
+      xyz="1.20926922286017 -0.485015913029201 -0.191989627797157"
+      rpy="1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="arm2_base_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link  name="arm2_link1">
+    <inertial>
+      <origin
+        xyz="-7.7923E-08 0.21472 1.5467E-08"
+        rpy="0 0 0" />
+      <mass
+        value="6.5885" />
+      <inertia
+        ixx="0.11783"
+        ixy="3.2015E-08"
+        ixz="-9.8953E-09"
+        iyy="0.013183"
+        iyz="-4.8087E-09"
+        izz="0.11739" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/arm2_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.54902 0.29412 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/arm2_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint  name="arm2_joint1"
+    type="revolute">
+    <origin
+      xyz="0 0.15 0"
+      rpy="0 -1.5701064071066 0" />
+    <parent
+      link="arm2_base_link" />
+    <child
+      link="arm2_link1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-6"
+      upper="6"
+      effort="100000"
+      velocity="100" />
+  </joint>
+  <link  name="arm2_link2">
+    <inertial>
+      <origin
+        xyz="3.3481E-08 0.1606 9.2353E-08"
+        rpy="0 0 0" />
+      <mass
+        value="7.0596" />
+      <inertia
+        ixx="0.11953"
+        ixy="-4.1669E-07"
+        ixz="6.1743E-08"
+        iyy="0.020135"
+        iyz="1.5479E-07"
+        izz="0.12624" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/arm2_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.54902 0.29412 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/arm2_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint  name="arm2_joint2"
+    type="revolute">
+    <origin
+      xyz="0 0.36 0"
+      rpy="1.14655709619566 1.5707963267949 0" />
+    <parent
+      link="arm2_link1" />
+    <child
+      link="arm2_link2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100000"
+      velocity="100" />
+  </joint>
+  <link  name="arm2_link3">
+    <inertial>
+      <origin
+        xyz="-3.5146E-07 0.17228 -2.708E-07"
+        rpy="0 0 0" />
+      <mass
+        value="5.7914" />
+      <inertia
+        ixx="0.1009"
+        ixy="-3.6212E-09"
+        ixz="5.6558E-08"
+        iyy="0.014012"
+        iyz="4.8347E-09"
+        izz="0.1076" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/arm2_link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.98824 0.54902 0.29412 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/arm2_link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint  name="arm2_joint3"
+    type="revolute">
+    <origin
+      xyz="0 0.35 0"
+      rpy="-1.7176 0 0" />
+    <parent
+      link="arm2_link2" />
+    <child
+      link="arm2_link3" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100000"
+      velocity="100" />
+  </joint>
+  <link  name="arm2_link4">
+    <inertial>
+      <origin
+        xyz="4.5747E-06 0.1033 -7.2535E-06"
+        rpy="0 0 0" />
+      <mass
+        value="3.2794" />
+      <inertia
+        ixx="0.019376"
+        ixy="-2.823E-06"
+        ixz="-5.5145E-08"
+        iyy="0.0088537"
+        iyz="3.7408E-06"
+        izz="0.014767" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/arm2_link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.54902 0.29412 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mango_5/meshes/arm2_link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint  name="arm2_joint4"
+    type="revolute">
+    <origin
+      xyz="0 0.350000000000017 0"
+      rpy="1.57079632679473 0.308474059376602 1.57079632679489" />
+    <parent
+      link="arm2_link3" />
+    <child
+      link="arm2_link4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100000"
+      velocity="100" />
+  </joint>
+
+  <transmission name="tran11">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="arm1_joint1">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor11">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran12">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="arm1_joint2">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor12">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran13">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="arm1_joint3">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor13">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran14">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="arm1_joint4">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor14">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran15">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="arm1_joint5">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor15">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran21">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="arm2_joint1">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor21">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran22">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="arm2_joint2">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor22">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran23">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="arm2_joint3">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor23">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran24">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="arm2_joint4">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor24">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo>
+
+
+</robot>

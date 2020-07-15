@@ -1,0 +1,51 @@
+<launch>
+
+	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+		<arg name="world_name" value="$(find mango_gazebo)/worlds/mango.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="recording" value="false"/>
+    <arg name="debug" value="false"/>
+	</include>
+
+
+	<param name="robot_description" textfile='$(find mango_5)/urdf/mango_5.urdf' />
+	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+				args="-param robot_description -urdf -model mango_5 -x 0 -y 0 -z 0.5 -R 0 -P 0 -Y 0" />
+
+	<node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+		<param name="publish_frequency" type="double" value="50.0" />
+		<param name="tf_prefix" type="string" value="" />
+	</node>
+
+	<rosparam file="$(find mango_control)/gazebo/joint_state.yaml" command="load" />
+  <node name="joint_state_controller_spawner" pkg="controller_manager" type="controller_manager"
+        args="spawn joint_state_controller" respawn="false" output="screen" />
+
+  <rosparam file="$(find mango_control)/gazebo/arm1_controller.yaml" command="load" />
+  <node name="arm1_controller_spawner" pkg="controller_manager" type="controller_manager"
+        args="spawn arm1_controller" respawn="false" output="screen" />
+
+  <rosparam file="$(find mango_control)/gazebo/arm2_controller.yaml" command="load" />
+  <node name="arm2_controller_spawner" pkg="controller_manager" type="controller_manager"
+        args="spawn arm2_controller" respawn="false" output="screen" />
+
+	<rosparam command="load" file="$(find mango_moveit)/config/joint_names.yaml"/>
+	<param name="moveit_controller_manager" value="moveit_ros_control_interface::MoveItMultiControllerManager" />
+
+	<include file="$(find mango_moveit)/launch/planning_context.launch" >
+		<arg name="load_robot_description" value="true" />
+	</include>
+
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+		<param name="/use_gui" value="false"/>
+		<rosparam param="/source_list">[/joint_states]</rosparam>
+	</node>
+
+	<include file="$(find mango_moveit)/launch/move_group.launch">
+		<arg name="publish_monitored_planning_scene" value="true" />
+	</include>
+
+
+</launch>
